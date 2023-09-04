@@ -1,14 +1,17 @@
-import Dependencies._
+name := """play-scala-seed"""
+organization := "com.example"
 
-ThisBuild / scalaVersion     := "2.13.11"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
+version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file("."))
-  .settings(
-    name := "scala-template",
-    libraryDependencies += munit % Test
-  )
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-// See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
+scalaVersion := "2.13.11"
+
+libraryDependencies += guice
+libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
+
+// Adds additional packages into Twirl
+//TwirlKeys.templateImports += "com.example.controllers._"
+
+// Adds additional packages into conf/routes
+// play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"

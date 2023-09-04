@@ -6,3 +6,12 @@ target/
 project/metals.sbt
 project/project/metals.sbt
 project/project/project/metals.sbt
+
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
